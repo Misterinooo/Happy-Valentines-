@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Before I Ask You Something 💖</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&display=swap');
+
+body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Baloo 2', cursive;
+    background: linear-gradient(135deg, #ffd6e8, #ffeef5, #e0f7ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* Glass Card */
+.card {
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(15px);
+    padding: 50px;
+    border-radius: 30px;
+    max-width: 800px;
+    box-shadow: 0 15px 40px rgba(255, 105, 180, 0.3);
+    animation: fadeIn 1s ease;
+    position: relative;
+    z-index: 10;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+h1 {
+    font-size: 40px;
+    color: #ff4fa3;
+    margin-bottom: 20px;
+}
+
+.message {
+    font-size: 20px;
+    color: #ff6fae;
+    line-height: 1.7;
+}
+
+/* Highlight Zaina */
+.highlight {
+    color: #ff1493;
+    font-weight: bold;
+    text-shadow: 0 0 10px #ff9ad5;
+}
+
+/* Next Button */
+.next-button {
+    margin-top: 30px;
+    padding: 15px 40px;
+    font-size: 20px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Baloo 2', cursive;
+    background: rgba(173, 216, 230, 0.5);
+    backdrop-filter: blur(10px);
+    color: #0077aa;
+    box-shadow: 0 8px 20px rgba(0, 150, 255, 0.3);
+    transition: 0.3s ease;
+    position: relative;
+}
+
+.next-button:hover {
+    transform: scale(1.1);
+}
+
+/* Floating Hearts Rain */
+.heart {
+    position: absolute;
+    top: -10px;
+    font-size: 20px;
+    animation: rain 6s linear infinite;
+    opacity: 0.8;
+}
+
+@keyframes rain {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(120vh);
+    }
+}
+
+/* Cute Clouds */
+.cloud {
+    position: absolute;
+    font-size: 40px;
+    opacity: 0.8;
+    animation: floatCloud 20s linear infinite;
+}
+
+@keyframes floatCloud {
+    from { transform: translateX(-20vw); }
+    to { transform: translateX(120vw); }
+}
+
+/* Chibi hearts border */
+.border-hearts {
+    position: absolute;
+    font-size: 25px;
+}
+
+.top { top: 10px; left: 50%; transform: translateX(-50%); }
+.bottom { bottom: 10px; left: 50%; transform: translateX(-50%); }
+.left { left: 10px; top: 50%; transform: translateY(-50%); }
+.right { right: 10px; top: 50%; transform: translateY(-50%); }
+
+</style>
+</head>
+
+<body>
+
+<div class="border-hearts top">💖🤝💖🤝💖🤝💖</div>
+<div class="border-hearts bottom">💖🤝💖🤝💖🤝💖</div>
+<div class="border-hearts left">💖🤝💖</div>
+<div class="border-hearts right">💖🤝💖</div>
+
+<div class="card">
+    <h1>Before I ask you this, I want to tell you something.</h1>
+
+    <div class="message">
+        I know this has been a very tough year for you, for me, and for our relationship.
+        I'm sure you're very busy with your own life, just like I am with mine.
+        But I still consider you so many things — my best friend, my one and only, my other half, and the love of my life.
+        So it wouldn't feel right if I didn’t put a little effort into making you something special for Valentine’s.
+        <br><br>
+        I love you so much, <span class="highlight">zaina</span>.  
+        More than you could ever imagine.
+        And so… I’m going to ask you this…
+    </div>
+
+    <button class="next-button" onclick="goNext()">💙 click here &lt;3 💙</button>
+</div>
+
+<script>
+
+// Heart rain
+setInterval(() => {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "💖";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (Math.random() * 20 + 15) + "px";
+    heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 6000);
+}, 200);
+
+// Clouds
+setInterval(() => {
+    const cloud = document.createElement("div");
+    cloud.classList.add("cloud");
+    cloud.innerHTML = "☁️";
+    cloud.style.top = Math.random() * 60 + "vh";
+    document.body.appendChild(cloud);
+
+    setTimeout(() => cloud.remove(), 20000);
+}, 5000);
+
+function goNext() {
+    window.location.href = "index.html"; //
+}
+
+</script>
+
+</body>
+</html>
